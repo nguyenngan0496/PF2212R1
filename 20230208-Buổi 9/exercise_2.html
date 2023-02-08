@@ -20,20 +20,27 @@
         <li>Peach Tea</li>
     </ul>
 
+    <button id="btn-update">Update Menu</button>
     <script>
-        //đổi màu header
+        let btnUpdate = document.getElementById("btn-update");
+        btnUpdate.addEventListener('click', ()=>{
+
         let titleElement = document.getElementById("title");
+        let menuElement = document.getElementById("menu");
+        let newListItemElement = document.createElement("li");
+        let oldItemElement = document.getElementById("old-item");
+        
+        //đổi màu title
         titleElement.style.color = "red";
 
         //add new list item
-        let menuElement = document.getElementById("menu");
-        let newListItemElement = document.createElement("li");
         newListItemElement.innerHTML = "Fruit Yogurt";
         menuElement.appendChild(newListItemElement);
 
         //remove item
-        let oldItemElement = document.getElementById("old-item");
         oldItemElement.remove();
+        
+    });
 
     </script>
 </body>
