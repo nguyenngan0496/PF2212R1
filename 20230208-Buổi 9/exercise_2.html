@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 - HTML DOM</title>
+</head>
+<body>
+    <!-- In this exercise, you need to finish these missions:
+    1. Change color of the title
+    2. Remove Tropical Fruit Tea from the list
+    3. Add "Fruit Yogurt" to the list -->
+    <h1 id="title">Coffee Shop Menu</h1>
+    <ul id="menu">
+        <li>Coffee</li>
+        <li>Capuchino</li>
+        <li>Milk Tea</li>
+        <li id="old-item">Tropical Fruit Tea</li>
+        <li>Peach Tea</li>
+    </ul>
+
+    <script>
+        //đổi màu header
+        let titleElement = document.getElementById("title");
+        titleElement.style.color = "red";
+
+        //add new list item
+        let menuElement = document.getElementById("menu");
+        let newListItemElement = document.createElement("li");
+        newListItemElement.innerHTML = "Fruit Yogurt";
+        menuElement.appendChild(newListItemElement);
+
+        //remove item
+        let oldItemElement = document.getElementById("old-item");
+        oldItemElement.remove();
+
+    </script>
+</body>
+</html>
