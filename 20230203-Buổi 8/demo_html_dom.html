@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo HTML Dom</title>
+</head>
+<body>
+    <h1 id="title">Demo HTML Dom</h1>
+    <p id="paragraph">This is a paragraph.</p>
+
+    <ul id="list-lesson">
+        <li>Lesson 6 - Variable, Data Type and Operator</li>
+        <li>Lesson 7 - Practice Variable, Data Type and Operator</li>
+    </ul>
+
+    <script>
+        //Tìm kiếm các element trong tài liệu HTML,
+        //trả về element có id đã dc chỉ định
+        let titleElement = document.getElementById("title");
+        console.log(titleElement);
+        console.log(titleElement.innerHTML);
+
+        //demo HTML DOM -> Lesson 8 - Demo HTML DOM
+        titleElement.innerHTML = "Lesson 8 - Demo HTML DOM";
+
+        //Change text color of h1 tag
+        titleElement.style.color = "pink";
+
+        //"This is a paragraph" ->
+        //"With HTML DOM, we can change the content of a HTML tag"
+        let paragraphElement = document.getElementById("paragraph");
+        console.log(paragraphElement);
+        console.log(paragraphElement.innerHTML);
+        paragraphElement.innerHTML = "With HTML DOM, we can change the content of a HTML tag";
+    
+        //Change background color of paragraph tag
+        paragraphElement.style.backgroundColor = "orange";
+    
+
+        //Remove paragraph element
+        paragraphElement.remove();
+
+
+        //Add new "li" element to "ul" element 
+        let listLessonElement = document.getElementById("list-lesson");
+
+        //create new "li" element
+        let newListItemElement = document.createElement("li");
+        newListItemElement.innerHTML = "Lesson 8 - HTML DOM";
+
+        console.log("New list item element");
+        console.log(newListItemElement);
+
+        listLessonElement.appendChild(newListItemElement);
+    
+    </script>
+</body>
+</html>
