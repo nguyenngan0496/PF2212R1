@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết chương trình để kiểm tra môn học hiện tại.
+    Nếu môn học là Javascript thì in "I'm studying Javascript" -->
+    
+    <form action="#">
+        Course: <input type="text" id="gpa">
+        <button id="btn-action">Submit</button>
+    </form>
+
+    <script>
+        let btnAction = document.getElementById("btn-action");
+        btnAction.addEventListener("click", ()=>{
+            let gpaElement = document.getElementById("gpa");
+
+            if (gpaElement.value >=8.5) {
+                console.log("Bạn được tuyển thẳng.");
+            } else {
+                console.log("Bạn chưa đủ điểm.");
+            }
+        });
+    </script>
+</body>
+</html>
