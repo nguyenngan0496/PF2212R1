@@ -1,13 +1,14 @@
-alert ("Text linking script");
 
-let btnAction = document.getElementById("btn");
-btnAction.addEventListener ("click", () => {
-    let chieuDai = document.getElementById("cd");
-    let chieuRong = document.getElementById("cr");
-    if (parseFloat(chieuDai.value) == parseFloat(chieuRong.value)) {
-        console.log("Đây là hình vuông.");
+
+let btnAction1 = document.getElementById("btn-action-1");
+btnAction1.addEventListener ("click", () => {
+    let chieuDai = parseInt(document.getElementById("cd").value);
+    let chieuRong = parseInt(document.getElementById("cr").value);
+    
+    if (chieuDai == chieuRong) {
+        alert("Đây là hình vuông.");
     } else {
-        console.log("Đây không phải hình vuông.");
+        alert("Đây không phải hình vuông.");
     };
 });
 
