@@ -11,16 +11,20 @@
     Nếu môn học là Javascript thì in "I'm studying Javascript" -->
     
     <form action="#">
-        Month: <input type="text" id="month">
+        Course: <input type="text" id="gpa">
         <button id="btn-action">Submit</button>
     </form>
 
     <script>
         let btnAction = document.getElementById("btn-action");
         btnAction.addEventListener("click", ()=>{
-            let month = document.getElementById("month");
+            let gpaElement = document.getElementById("gpa");
 
-            if (month == 1 || month == 5 || month ==) 
+            if (parseFloat(gpaElement.value) >=8.5) {
+                console.log("Bạn được tuyển thẳng.");
+            } else {
+                console.log("Bạn chưa đủ điểm.");
+            }
         });
     </script>
 </body>
