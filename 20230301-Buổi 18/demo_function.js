@@ -14,9 +14,17 @@ function calculateSum() {
 
    let total = n1 + n2;
 
-   console.log(total);
+   // console.log(total);
+   // sau khi tính toán xong,trả kết quả ra
+   // bên ngoài thay vì in trực tiếp
+
+   return  total;//trả kq mà hàm đã xử lý ra ctrinh
+   //ko để thêm code dưới lệnh return
+   //nếu ko thì sẽ unreadable
 }   
 
-calculateSum();
-calculateSum();
-calculateSum();
+let result = calculateSum();
+console.log(result);
+// calculateSum();
+// calculateSum();
+// calculateSum();
