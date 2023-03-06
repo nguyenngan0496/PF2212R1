@@ -1,10 +1,5 @@
-function isLeapYear(a) {
-    if (a % 4 == 0 && a % 100 != 0) {
-        console.log(`${a} là năm nhuận`)
-    } else (
-        console.log(`${a} không là năm nhuận`)
-    )
-
+function isLeapYear(year) {
+    return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
 };
 
-isLeapYear(2100)
+console.log(isLeapYear(2400))
