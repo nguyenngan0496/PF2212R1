@@ -1,0 +1,872 @@
+$primary:#B9AEBB;
+$secondary:#354053;
+$tertiary:#554F64;
+$lightcolor:#F7F7F7;
+$highlight:rgb(188, 96, 127);
+$whiteborder: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+
+@mixin form-btn {
+    .form-control {
+        background-color: $tertiary;
+    }
+
+    .btn {
+        background-color: $tertiary;
+
+        .bi {
+            color: $primary;
+        }
+    }
+}
+
+@mixin icon {
+    a {
+        color: $tertiary;
+        transition: 0.5s;
+        font-size: larger;
+        font-size: x-large;
+       
+    }
+
+    a:hover {
+        
+        transform: scale(1.5);
+    }
+
+    .bi {
+        margin-left: 10px;
+        text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+        1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    }
+}
+
+@mixin intro-col {
+
+    img {
+        width:150%;
+        position:relative;
+    }
+
+    h2 {
+        border-bottom: 3px double $lightcolor;
+    }
+
+    p {
+        text-align: right;
+    }
+}
+body, head {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif !important;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+a {
+    
+    text-decoration: none;
+}
+
+
+// /////////////////////////
+// First Nav
+.first-nav {
+    background-color:$lightcolor;
+    background: repeating-linear-gradient(
+    135deg,
+    $primary,
+    $primary 1px,
+    #fbfbff 1px,
+    #fbfbff 10px);
+
+    .input-group {
+        @include form-btn()
+    }
+
+    .nav-icon {
+        @include icon()
+    }
+}
+
+.nav-left img {
+    margin-left: 70px;
+}
+.nav-icon {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+// /////////////////////////
+// Second Nav
+.second-nav div {
+    background-color: $secondary;
+    
+    #navbarNavDropdown {
+        justify-content: center;
+    }
+    .nav-item a {
+        color: $primary;
+        margin:0px 50px;
+        transition: 0.5s;
+    }
+
+    .nav-item .nav-link:hover {
+        transform: scale(1.5);
+        color: $lightcolor;
+    }
+
+    .shop-option {
+        display: flex;
+
+        a {
+            display: inline-block;
+            width: 70%;
+        }
+        a:hover {
+            color: $lightcolor;
+            transform: scale(1.1);
+            background-color: $secondary;
+        }
+
+        h5 {
+            font-weight: bolder;
+        }
+    }
+
+   
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+    .second-nav {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+}
+
+
+
+// /////////////////////////
+// Banner
+.carousel-inner {
+    position: relative;
+    background-size:contain;
+}
+
+// /////////////////////////
+// Product
+.product {
+    margin: 0px 10px
+
+}
+
+.intro-is {
+    @include intro-col();
+    background-color: lighten($secondary,40%);
+    h2 {
+        color: $secondary;
+    }
+    
+}
+
+
+.intro-po {
+    @include intro-col();
+    background-color: lighten($tertiary,40%);
+    h2 {
+        color: $tertiary;
+    }
+    
+}
+
+.introbtn {
+    margin-left:20px;
+    width: 200px;
+    border: 1px solid white;
+    
+    a {
+    margin-left: 10px;
+    color: $lightcolor;
+    font-size: large;
+    }
+
+}
+
+.introbtn:hover {
+    background-color: $lightcolor;
+    transition: 0.5s;
+    
+    a {
+        color: $secondary;
+    }
+}
+
+.product {
+    .card {
+        text-align: center;
+        a {
+            color: $secondary;
+            font-weight: bolder;
+            font-size: large;
+        }
+    
+        .card-title {
+            margin-top: 10px;
+        }
+    
+    }
+    
+    .card-body {
+        position:relative;
+
+        // .price {
+        //     position: absolute;
+        //     bottom: 40%;
+        //     left: 40%;
+        // }
+    }
+
+    .card-link {
+        display: inline-block;
+        width: 100%;
+        background-color: $lightcolor;
+        border: 1px solid $secondary;
+        transition: 0.5s;
+        // position: absolute;
+        bottom: 0%;
+        left: 0%;
+        
+       
+        
+        p {
+            font-size: medium;
+            vertical-align: center;
+            margin: 10px 10px ;
+        }
+    }
+    
+    .card-link:hover {
+        background-color: lighten($secondary,50%);
+        color: $lightcolor;
+        border: 1px solid $lightcolor;
+    }
+    .card-top {
+        position: relative;
+    
+        
+    }
+    
+    .addwl {
+        font-size: xx-large;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        font-size: small;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+        transform: translateX(-50%);
+        
+        .bi {
+            font-size:x-large;
+            color: $lightcolor;
+        }
+    
+        p {
+            width: 100px;
+            background-color: $lightcolor;
+            color: $secondary;
+            font-weight: bolder;
+        }
+        
+    }
+    
+    .card a:hover .card-title {
+        color: $highlight;
+    }
+    .card a:hover .addwl {
+        display: block;
+        color: $primary;
+        opacity: 1;
+        bottom: 20%;
+    }
+    .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        right:0 ;
+        border-radius:3px;
+        cursor: pointer;
+        background: linear-gradient(180deg, hsla(291, 9%, 71%, 0.5) 0%, hsla(302, 30%, 84%, 0.5) 0%, hsla(218, 22%, 27%, 0.9) 100%);
+        opacity: 0;
+        transition: 0.5s;
+    }
+    
+    .card a:hover .overlay {
+        opacity: 1;
+    }
+}
+
+
+// /////////////////////////
+// Feedback
+
+.feedback {
+    background-color: $primary;
+
+    h3 {
+        padding-top: 10px;
+        animation-name: changeColor ;
+        animation-duration: 2s;
+        animation-timing-function:linear;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-play-state:running;
+        
+    }
+    
+    @keyframes changeColor {
+            0% {
+                color: $lightcolor;
+            }
+            50% {
+                color: $highlight;
+            }
+            100% {
+                color: $secondary;
+            }
+        }
+        
+    p {
+        color: $tertiary;
+    }  
+
+    .card-title .bi {
+        color: $highlight;
+    }
+}
+
+
+.card-body {
+    
+    .card-text {
+    display: block; 
+    width: 100%; 
+    white-space: normal; 
+    font-size: small;
+    }
+
+    .b-item {
+        font-size: 10px;
+        font-style: italic;
+    }
+}
+
+
+// //////////////////////// 
+// Product Detail
+.breadcrumb {
+    a {
+        display: block;
+        color: $tertiary;
+        transition: 0.5s;
+    }
+
+    a:hover {
+        transform: scale(1.1);
+        color: $highlight;
+    }
+}
+
+.product-detail {
+
+    color: $secondary;
+    
+    .product-slide {
+        .carousel {
+            position: relative;
+        }
+        
+        
+    
+        .carousel-indicators{
+            position: relative;
+            bottom: 0;
+        
+        }
+        .carousel-indicators li{
+            width: 100px;
+            height: 100%;
+            cursor: pointer;
+    
+        }
+    }
+    
+}
+
+.product-checkout {
+    
+    background-color: $lightcolor;
+    padding: 20px;
+
+    .bi {
+        color: $highlight;
+        font-size: large;
+    }
+
+    .btn {
+        background-color: $primary;
+        border-collapse: collapse;
+
+        
+    }
+    .share a {
+        transition: 0.5s;
+    }
+    .share a:hover {
+        transform: scale(1.5);
+    }
+
+    .add-wl {
+        display: inline-block;
+        width: auto;
+        background-color: $lightcolor;
+        border: 1px solid $highlight;
+        transition: 0.5s;
+        color: $highlight;
+        
+       
+        
+        p {
+            font-size: medium;
+            margin: 10px 10px ;
+        }
+    }
+    
+    .add-wl:hover {
+        background-color: $highlight;
+        color: $lightcolor;
+        border: 1px solid $lightcolor;
+        
+        .bi {
+            color: #F7F7F7;
+        }
+    }
+    
+}
+
+.des {
+    
+    button {
+        color:$primary;
+    }
+
+    .bi {
+        color: $highlight;
+    }
+
+    
+
+}
+.recommend {
+    .card {
+        text-align: center;
+        
+        ;
+        a {
+            color: $secondary;
+            font-weight: bolder;
+            font-size: large;
+        }
+    
+        .card-title {
+            margin-top: 10px;
+        }
+    
+    }
+    
+    .card-body {
+        position:relative;
+        // .price {
+        //     position: absolute;
+        //     bottom: 40%;
+        //     left: 40%;
+        // }
+    }
+
+    .card-link {
+        display: inline-block;
+        width: 100%;
+        font-size: small;
+        background-color: $lightcolor;
+        border: 1px solid $secondary;
+        transition: 0.5s;
+        // position: absolute;
+        bottom: 0%;
+        left: 0%;
+       
+        
+        p {
+            font-size: medium;
+            vertical-align: center;
+            margin: 10px 10px ;
+        }
+    }
+    
+    .card-link:hover {
+        background-color: lighten($secondary,50%);
+        color: $lightcolor;
+        border: 1px solid $lightcolor;
+    }
+    .card-top {
+        position: relative;
+    
+        
+    }
+    
+    .addwl {
+        font-size: xx-large;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        font-size: small;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+        transform: translateX(-50%);
+        
+        .bi {
+            font-size:x-large;
+            color: $lightcolor;
+        }
+    
+        p {
+            width: 100px;
+            background-color: $lightcolor;
+            color: $secondary;
+            font-weight: bolder;
+        }
+        
+    }
+    
+    .card a:hover .card-title {
+        color: $highlight;
+    }
+    .card a:hover .addwl {
+        display: block;
+        color: $primary;
+        opacity: 1;
+        bottom: 20%;
+    }
+    .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        right:0 ;
+        border-radius:3px;
+        cursor: pointer;
+        background: linear-gradient(180deg, hsla(291, 9%, 71%, 0.5) 0%, hsla(302, 30%, 84%, 0.5) 0%, hsla(218, 22%, 27%, 0.9) 100%);
+        opacity: 0;
+        transition: 0.5s;
+    }
+    
+    .card a:hover .overlay {
+        opacity: 1;
+    }
+}
+
+// ////////////////////////// 
+// Campaign
+
+.campaign {
+    
+    .cam-box {
+        display: flex;
+        justify-content: space-around;
+    }
+    .cam-box-item {
+        position: relative;
+        img {
+            max-width: 200px;
+        }
+        
+        .cam-box-caption {
+            position:absolute;
+            top:0;
+            color: $tertiary;
+            background-color: $lightcolor;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .overlay {
+            width: 200px;
+            height: 100%;
+            position: absolute;
+            top:0;
+            left:10 ;
+            cursor: pointer;
+            background: linear-gradient(180deg, hsla(291, 9%, 71%, 0.5) 0%, hsla(302, 30%, 84%, 0.5) 0%, hsla(218, 22%, 27%, 0.9) 100%);
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .overlay-text {
+            color: $lightcolor;
+            opacity: 0;
+            position: absolute;
+            top:50% ;
+            background-color: $tertiary;
+            transition: 0.5s;
+            font-size: small;
+        }
+    }
+
+    .cam-box-item:hover .cam-box-caption {
+        top:40%;
+    }
+
+
+    .cam-box-item:hover .overlay {
+        opacity: 0.7;;
+    }
+
+    .cam-box-item:hover .overlay-text {
+        opacity: 1;;
+    }
+}
+    
+.cam-content {
+    text-align: center;
+    .card {
+        border:none;
+    }
+
+    .row img {
+        height:200px;
+    }
+    .card-body {
+        background-color: $lightcolor;
+    }
+
+    .card-title {
+        margin: 0;
+        padding: 5px;
+        background-color: $tertiary;
+        color: $lightcolor;
+    }
+
+    .btn {
+        background-color: $lightcolor;
+        color: $secondary;
+        border-radius: 0%;
+        transition: 0.5s;
+    }
+
+    .btn:hover {
+        background-color: $secondary;
+        color: $lightcolor;
+    }
+
+    .load-btn .btn {
+        background-color: $secondary;
+        color: $lightcolor;
+        transition: 0.5s;
+    }
+
+    .load-btn .btn:hover {
+        background-color: $lightcolor;
+        color: $highlight;
+        border:1px solid $highlight;
+        font-weight: bolder;
+    }
+}
+  
+// /////////////////////////
+// Footer
+
+.footer {
+    background-color: $secondary;
+    padding: 1px;
+
+
+    .newsletter {
+        padding:30px;
+        background: repeating-linear-gradient(
+        135deg,
+        $primary,
+        $primary 1px,
+        #fbfbff 1px,
+        #fbfbff 10px);
+        
+        p {
+            font-weight: bolder;
+            font-size: x-large;
+            color: $secondary;
+            text-shadow: 5px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+        }
+
+        .address p {
+            font-size: small;
+            text-align: right;
+            margin: 5px;
+            margin-right: 30%;
+        }
+    }
+
+    @include form-btn; 
+    
+    .social-link {
+        a {
+            display: inline-block;
+        }
+        @include icon();
+
+
+
+    }
+
+    .links {
+        p {
+            font-size: large;
+            color: $lightcolor;
+            font-weight: bolder;
+        }
+    }
+
+    ul li {
+        list-style-type: none;
+    }
+    a {
+        display: block;
+        color: $primary;
+        transition: 0.5s;
+    }
+
+    li a:hover {
+        transform: scale(1.1);
+        color: $lightcolor;
+    }
+
+    p {
+        color: $lightcolor;
+    }
+}
+// ////////////////////////
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.pop-up img {
+    width: 7%;
+    transition: 0.5s;
+}
+
+.pop-up img:hover {
+    transform: scale(1.2);
+}
+.open-button {
+    cursor: pointer;
+    position: fixed;
+    bottom:20px;
+    right: 20px;
+
+  }
+  
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    border: 3px dotted $highlight;
+    z-index: 9;
+  }
+  
+  
+  .form-container {
+    max-width: 400px;
+    padding: 20px;
+    margin: 5px;
+    background-color: $primary;
+
+    img {
+        width: 70px;
+    }
+
+    h5 {
+        font-weight: bolder;
+    }
+  }
+  
+  
+  .form-container input[type=text] {
+    width: 90%;
+    height: 35px;
+    padding: 15px;
+    border: none;
+    background: $lightcolor;
+  }
+  
+  
+  .form-container .submit, .cancel  {
+    border: none;
+    cursor: pointer;
+
+    .bi {
+        display: block;
+        font-size: 250% ;
+        color: $secondary;
+        transition: 0.5s;
+    }
+
+    .bi:hover {
+        transform: scale(1.2);
+    }
+  }
+  
+  .form-container .cancel {
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+  
+
+
+
+
+
+@media only screen and (min-width: 577px),(max-width:767px) {
+    .intro-is, .intro-po {
+      height: auto;
+    }
+}
+
+@media  only screen and (max-width: 576px) {
+    .intro-is, .intro-po {
+      height: auto;
+    }
+
+}  
+
+@media  only screen and (min-width:769px) {
+    .intro-is, .intro-po {
+        height: 430px;
+      }
+}
+
+
+
+
+
+
+
+

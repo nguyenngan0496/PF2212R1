@@ -1,0 +1,40 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+div.form-album, .list-album{
+    width: 500px;
+    margin: 25px;
+    padding: 10px;
+    float: left;
+
+}
+
+
+div.form-album h3  {
+    padding: 0px;
+    margin-top: 0px;
+}
+
+div.form-album label {
+    width: 150px;
+    float: left;
+}
+
+div.form-album input[type="text"],
+input[type="date"],
+input[type="number"], button {
+    margin-bottom: 20px;
+    width: 300px;
+    padding: 5px;
+}
+
+.error {
+    color: red;
+}
+
+table {
+    border: solid 1px #a97539;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Album nhập kho dành cho Staff</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body onload="callListAlbum()">
+    <!-- Nhập data album -->
+    <div class="form-album">
+        <div><h3>Thông tin album</h3></div>
+        <label for="">Tên album</label>
+        <input type="text" id="name">
+        <span id="name-error" class="error"></span>
+        <br>
+
+        <label for="">Nghệ sỹ</label>
+        <input type="text" id="artist">
+        <span id="artist-error" class="error"></span>
+        <br>
+
+        <label for="">Ngày phát hành</label>
+        <input type="date" id="release-date">
+        <span id="release-error" class="error"></span>
+        <br>
+
+        <label for="">Ngày nhập kho</label>
+        <input type="date" id="receipt-date">
+        <span id="receipt-error" class="error"></span>
+        <br>
+        
+        <label for="">Số lượng nhập</label>
+        <input type="number" id="quantity">
+        <span id="quantity-error" class="error"></span>
+        <br>
+
+        <label for="">Giá tiền</label>
+        <input type="number" id="price">
+        <span id="price-error" class="error"></span>
+        <br>
+
+        <input type="hidden" id="index">
+
+        <label for=""></label>
+        <button id="save" onclick="save()">Lưu kho</button>
+        
+        <label for=""></label>
+        <button id="update" style="display:none" onclick="updateAlbum()">Update</button>
+
+    </div>
+
+    <div class="list-album" id="list-album">
+        <h3>Danh sách album lưu kho</h3>
+        <table width="600" cellpadding="0" id="view-album" class="table table-striped">
+           
+        </table>
+    </div>
+
+   
+    
+    
+    <script src="./js/album.js"></script>
+</body>
+
+</html>
